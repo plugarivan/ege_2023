@@ -9,7 +9,7 @@ for x in range(100, 1000):
     s = str(x)
     summa1 = int(s[0]) + int(s[1])
     summa2 = int(s[1]) + int(s[2])
-    if summa1 >= summa2:
+    if summa1 > summa2:
         final = str(summa2) + str(summa1)
     else:
         final = str(summa1) + str(summa2)
