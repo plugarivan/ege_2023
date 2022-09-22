@@ -9,18 +9,13 @@ for n in range(1, 256):
     s = bin(n)[2:]
     s = (8 - len(s)) * '0' + s
     s1 = ''
-    i = 0
-    for x in range(len(s)):
-        if s[x] == '1':
-            i += 1
-            if i == s.count('1'):
-                i = x
-    for x in range(0, i):
+    i = s.rindex('1')
+    for x in range(i):
         if s[x] == '1':
             s1 += '0'
-        if s[x] == '0':
+        else:
             s1 += '1'
-    for x in range(i, len(s)):
-        s1 += s[x]
+    s1 += s[i:]
     if int(s1, 2) == 178:
         print(n)
+
