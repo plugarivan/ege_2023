@@ -10,6 +10,6 @@ def f(x):
 
 k = 0
 for a in range(1, 1001):
-    if all(f(x) == True for x in range(1, 1000) for y in range(1, 1000)):
+    if all(f(x) for x in range(1, 1000) for y in range(1, 1000)):
         k += 1
 print(k)
