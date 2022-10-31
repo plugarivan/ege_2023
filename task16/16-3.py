@@ -11,7 +11,7 @@ def f(n):
     if n < 3:
         return 2 * n
     else:
-        if n % 3 == 0:
+        if n % 2 == 0:
             return 3 * n + 5 + f(n - 2)
         else:
             return n + 2 * f(n - 6)

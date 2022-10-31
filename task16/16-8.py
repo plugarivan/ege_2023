@@ -18,4 +18,5 @@ for i in range(len(s)):
         else:
             s[i] = 2 * i * i + s[i - 1]
 
-print(len([n for n in s if 1 <= n < 10 ** 7]))
+print(len([n for n in range(len(s)) if 1 <= s[n] < 10 ** 7]))
+
