@@ -8,6 +8,6 @@ with open('../files/task17/17-205.txt') as f:
     s = [int(x) for x in f]
     numbers = []
     for i in range(len(s) - 1):
-        if abs(s[i] + s[i + 1]) % 100 == 19 and (s[i] % 7 == 0 or s[i + 1] % 7 == 0):
+        if (s[i] + s[i + 1]) % 2 == 0 and (abs(s[i]) % 100 == 17 or abs(s[i + 1]) % 100 == 17):
             numbers.append(s[i] + s[i + 1])
 print(len(numbers), max(numbers))
