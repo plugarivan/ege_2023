@@ -1,9 +1,10 @@
-def f(x, y):
-    if x > y or x == 17:
-        return 0
-    elif x == y:
-        return 1
-    return f(x + 1, y) + f(x * 2, y)
+p = set(range(1, 43))
+q = set(range(25, 99))
+a = set()
+for x in range(-1000, 1000):
+    if not((x in q) <= (not(x in p) and (x in q) <= (x in a))):
+        a.add(x)
+print(a)
+print(max(a) - min(a))
 
 
-print(f(1, 10) * f(10, 35))
