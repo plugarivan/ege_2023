@@ -10,12 +10,15 @@
 from functools import lru_cache
 
 @lru_cache
-def f( start, end, lastCmd ):
-  if start == end: return 1
-  if start == 33 or start > end: return 0
-  count =  f( start+1, end, 1 )
-  count += f( start+3, end, 2 ) if start not in [16,17] else 0
-  count += f( start*2, end, 3 ) if lastCmd != 3 and not(10<=start<=17) else 0
-  return count
+def f(x, y, command):
+    if x > y or x == 33:
+        return 0
+    if x == y:
+        return 1
+    k = f(x + 1, y, 0)
+    k += f(x + 3, y, 0) if x not in (16, 17) else 0
+    k += f(x * 2, y, 1) if command != 1 and not(10 <= x <= 17) else 0
+    return k
 
-print( f( 2, 51, 0 ) )
+
+print(f(2, 51, 0))
