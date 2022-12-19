@@ -1,11 +1,13 @@
-def f(x, y, k=0):
-    if x > y:
-        return 0
-    if x == y:
-        return 1
-    if x % 2:
-        return f(x + 3, y, k) + f(x * 2, y, k + 1)
-    else:
-        return f(x + 3, y, k) + f((x * 2) + 1, y, k)
+def sem(a):
+    s = ''
+    while a > 0:
+        s = str(a % 7) + s
+        a //= 7
+    return s
 
-print(f(1, 76, 0))
+x = 7 ** 103 + 49 ** 98 - 7 ** 120 - 7 ** 33
+
+for y in range(1, 10000):
+    xy = int(sem(x)) + int(sem(y))
+    if sum([int(i) for i in str(xy)]) < mini:
+        mini
