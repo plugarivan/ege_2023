@@ -4,7 +4,7 @@
 '''
 with open('../files/task24/k7a-6.txt') as f:
     s = f.readline()
-    k, kmax = 0, 0
+    k = kmax = 0
     for i in s:
         if i not in 'AE':
             k += 1

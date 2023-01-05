@@ -4,7 +4,7 @@
 '''
 with open('../files/task24/24-157.txt') as f:
     s = f.readline()
-    k, kmax = 1, 1
+    k = kmax = 1
     for i in range(len(s) - 1):
         if (s[i] == 'P' and s[i + 1] == 'R') or (s[i] == 'R' and s[i + 1] == 'P'):
             k = 1
