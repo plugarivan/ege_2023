@@ -7,8 +7,11 @@
 with open('../files/task24/24-228.txt') as f:
     groups = f.readline().split('XX')[1:-1]
     ans = []
+    chifri = '0123456789'
     for x in groups:
-        if len(x) == 11 and x[0] == '3' and x[5:7] == '78' and x[-2:] == '45':
+        if len(x) == 11 and x[0] == '3' and x[5:7] == '78' and x[-2:] == '45' \
+                and x[1] in chifri and x[2] in chifri and x[3] in chifri and x[4] in chifri \
+                and x[-3] in chifri and x[-4] in chifri:
            ans.append(x)
     pr, summa = 1, 0
     for i in max(ans):

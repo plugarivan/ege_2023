@@ -17,7 +17,6 @@ with open('../files/task24/24-s1.txt') as f:
                 if kb > kbmax:
                     kbmax = kb
                     s = line
-                kbmax = max(kb, kbmax)
     for x in s:
         if x in slovar:
             slovar[x] += 1

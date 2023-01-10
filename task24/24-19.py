@@ -6,11 +6,15 @@
 with open('../files/task24/24-230.txt') as f:
     groups = f.readline().split('ZZ')[1:-1]
     ans = []
+    chifri = '0123456789'
     for x in groups:
-        if len(x) == 11 and x[0] == '8' and x[4:6] == '54' and x[-2:] == '22':
-           ans.append(x)
-    pr = 1
-    for i in max(ans):
-        if int(i) % 2:
-            pr *= int(i)
+        if len(x) == 11 and x[0] == '8' and x[4:6] == '54' and x[-2:] == '22' \
+                and x[1] in chifri and x[2] in chifri and x[3] in chifri and x[6] in chifri and x[7] in chifri \
+                and x[8] in chifri:
+            ans.append(x)
+pr = 1
+for i in max(ans):
+    if int(i) % 2:
+        pr *= int(i)
 print(pr)
+
