@@ -10,46 +10,39 @@
 – у Вани есть выигрышная стратегия, позволяющая ему выиграть первым или вторым ходом при любой игре Пети;
 – у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.
 '''
-#19
-def f(x, p):
-    if x >= 58 and p == 2:
-        return True
-    else:
-        if x < 58 and p == 2:
-            return False
-    return f(x + 1, p + 1) or f(x * 2, p + 1)
+#19 задание
+def f(x, y, p):
+    if x + y >= 58 or p > 2:
+        return p == 2
+    return f(x + 1, y, p + 1) or f(x + y, y, p + 1) or f(x, y + 1, p + 1) \
+or f(x, y + x, p + 1)
 
 
 print(min([i for i in range(1, 52) if f(6, i, 0)]))
-#20
+#20 задание
 def f(x, y, p):
     if x + y >= 58 or p > 3:
         return p == 3
     if p % 2:
-        return f(x + 1, y, p + 1) and f(x + y, y, p + 1) and \
-               f(x, y + 1, p + 1) and f(x, x + y, p + 1)
+        return f(x + 1, y, p + 1) and f(x + y, y, p + 1) and f(x, y + 1, p + 1) \
+            and f(x, y + x, p + 1)
     else:
-        return f(x + 1, y, p + 1) or f(x + y, y, p + 1) or \
-        f(x, y + 1, p + 1) or f(x, x + y, p + 1)
+        return f(x + 1, y, p + 1) or f(x + y, y, p + 1) or f(x, y + 1, p + 1) \
+or f(x, y + x, p + 1)
 
 
 print([i for i in range(1, 52) if f(6, i, 0)])
-#21
+
+#21 задание
 def f(x, y, p):
-    if x + y >= 58 and (p == 2 or p == 4):
-        return True
-    else:
-        if x + y < 58 and p == 4:
-            return False
-        else:
-            if x + y >= 58:
-                return False
+    if x + y >= 58 or p > 4:
+        return p == 2 or p == 4
     if p % 2 == 0:
-        return f(x + 1, y, p + 1) and f(x + y, y, p + 1) and \
-               f(x, y + 1, p + 1) and f(x, x + y, p + 1)
+        return f(x + 1, y, p + 1) and f(x + y, y, p + 1) and f(x, y + 1, p + 1) \
+            and f(x, y + x, p + 1)
     else:
-        return f(x + 1, y, p + 1) or f(x + y, y, p + 1) or \
-        f(x, y + 1, p + 1) or f(x, x + y, p + 1)
+        return f(x + 1, y, p + 1) or f(x + y, y, p + 1) or f(x, y + 1, p + 1) \
+or f(x, y + x, p + 1)
 
 
 print(min([i for i in range(1, 52) if f(6, i, 0)]))
