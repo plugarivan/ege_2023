@@ -5,8 +5,9 @@
 from itertools import product
 words = product('азимут', repeat=6)
 k = 0
-for w in words:
-    word = ''.join(w)
-    if (word.count('а') + word.count('у') + word.count('и')) >= 3:
+for i in words:
+    word = ''.join(i)
+    if (word.count('з') + word.count('м') + word.count('т')) >= 3:
         k += 1
 print(k)
+

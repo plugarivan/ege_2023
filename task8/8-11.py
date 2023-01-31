@@ -3,16 +3,18 @@
 столько же раз, сколько в заданном слове. Кроме того, в коде не должны стоять рядом две гласные и две согласные буквы.
 Сколько различных слов может составить Вася?
 '''
+from itertools import permutations
+words = permutations('авторота')
 k = set()
-for a in 'ао':
-    for b in 'втр':
-        for c in 'ао':
-            for d in 'втр':
-                for e in 'ао':
-                    for f in 'втр':
-                        for g in 'ао':
-                            for h in 'втр':
-                                word = a + b + c + d + e + f + g + h
-                                if word.count('а') == 2 and word.count('в') == 1 and word.count('т') == 2 and word.count('о') == 2 and word.count('р') == 1:
-                                    k.add(word)
-print(len(k) * 2)
+for i in words:
+    word = ''.join(i)
+    s = ''
+    for c in word:
+        if c in 'ао':
+            s += 'g'
+        else:
+            s += 's'
+    if 'gg' not in s and 'ss' not in s:
+        k.add(word)
+print(len(k))
+
