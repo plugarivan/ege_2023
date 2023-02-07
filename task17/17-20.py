@@ -10,7 +10,7 @@ def nCond(a, fun):
 
 with open('../files/task17/17-1.txt') as f:
     s = [int(x) for x in f]
-    sred = sum(s) // len(s)
+    sred = sum(s) / len(s)
     res = []
     for i in range(len(s) - 2):
         triple = s[i:i+3]

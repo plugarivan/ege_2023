@@ -7,12 +7,11 @@
 '''
 with open('../files/task17/17-1.txt') as f:
     s = [int(x) for x in f]
-    res = []
+    numbers = []
+    sred = sum(s) / len(s)
     for i in range(len(s) - 2):
-        if (s[i] < (sum(s) / len(s)) and '9' in str(s[i + 1]) and '9' in str(s[i + 2]) and '9' in str(s[i])) or \
-                (s[i + 1] < (sum(s) / len(s)) and '9' in str(s[i]) and '9' in str(s[i + 1]) and '9' in str(
-                    s[i + 2])) or \
-                (s[i + 2] < (sum(s) / len(s)) and '9' in str(s[i]) and '9' in str(s[i + 1]) and '9' in str(
-                    s[i + 2])):
-            res.append(s[i] + s[i+1] + s[i+2])
-print(len(res), max(res))
+        if (s[i] < sred or s[i + 1] < sred or s[i + 2] < sred) and \
+                ('9' in str(s[i]) and '9' in str(s[i + 1]) and '9' in str(s[i + 2])):
+            numbers.append(s[i] + s[i + 1] + s[i + 2])
+print(len(numbers), max(numbers))
+
