@@ -1,15 +1,5 @@
-def rot13(message):
-    res = ''
-    for item in message:
-        if (ord(item)>= ord('A') and ord(item)<= ord('M')) or (ord(item)>= ord('a') and ord(item)<= ord('m')):
-            res += chr(ord(item)+13)
-        elif (ord(item)>= ord('N') and ord(item)<= ord('Z')) or (ord(item)>= ord('n') and ord(item)<= ord('z')):
-            res += chr(ord(item)-13)
-        else:
-            res += item
-    return res
-
-
-
-
+for n in range(1263050, 129963960):
+    s = str(n)
+    if s[:2] == '12' and s[-5:-3] == '63' and s[-2] == '5' and n % 3123 == 0:
+        print(n)
 
