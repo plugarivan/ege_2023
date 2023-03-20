@@ -3,7 +3,7 @@
 '''
 x = 3 ** 72 + 6 * 3 ** 50 - 7 * 3 ** 26 + 2 * 3 ** 15 + 155
 s = set()
-while x > 0:
+while x:
     s.add(x % 9)
     x //= 9
 print(len(s))

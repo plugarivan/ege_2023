@@ -6,7 +6,7 @@ summa = 0
 for n in range(2, 11):
     x = 188
     s = ''
-    while x > 0:
+    while x:
         s = str(x % n) + s
         x //= n
     if list(s) == sorted(s):

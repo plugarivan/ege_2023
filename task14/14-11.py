@@ -4,7 +4,7 @@
 x = 81 ** 79 + 75 ** 2022 - 12 ** 35
 s = ''
 k = 0
-while x > 0:
+while x:
     s = str(x % 5) + s
     x //= 5
 for i in range(len(s)-1):
