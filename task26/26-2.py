@@ -12,3 +12,4 @@ with open('../files/task26/26-k3.txt') as f:
     n, k, m = map(int, f.readline().split())
     a = sorted([int(i) for i in f], reverse=True)
     print(a[m + k - 1], a[k - 1])
+sdfsdf
